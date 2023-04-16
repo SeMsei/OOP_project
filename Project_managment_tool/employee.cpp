@@ -74,3 +74,11 @@ int Employee::get_id() {
     return this->id;
 }
 
+void Employee::set_project_id(int new_project_id) {
+    this->project_id = new_project_id;
+}
+
+int Employee::get_project_id() {
+    return this->project_id;
+}
+

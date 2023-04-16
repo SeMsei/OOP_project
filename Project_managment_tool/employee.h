@@ -12,6 +12,7 @@ class Employee
 {
 private:
     int id;
+    int project_id;
 
     std::string first_name;
     std::string middle_name;
@@ -52,6 +53,8 @@ public:
     void add_work_task(int new_task);
     void add_personal_task(int new_task);
     int get_id();
+    void set_project_id(int new_project_id);
+    int get_project_id();
 
     Employee& operator=(Employee &other) = default;
     Employee& operator=(Employee &&other) = default;

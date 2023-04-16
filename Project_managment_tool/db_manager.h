@@ -10,8 +10,8 @@
 #include "employee.h"
 #include "role.h"
 #include <iostream>
-/*#include "worktask.h"
-#include "personaltask.h"
+#include "worktask.h"
+/*#include "personaltask.h"
 #include "project.h"*/
 
 class Employee;
@@ -47,12 +47,12 @@ public:
         std::string line;
         std::ifstream in(connection_str + "\\employees.txt");
         while (std::getline(in, line)) {
-            //id; first_name; middle_name; surname; date_birth; KPI; role; salary; date_start; is_cur_working;
+            //id; first_name; middle_name; surname; date_birth; KPI; role; salary; date_start; is_cur_working, project_id;
             //work_task_vec;
             //personal_task_vec;
             //
             //Employee tmp();
-            int id, tmp_id;
+            int id, tmp_id, project_id;
             std::string first_name, middle_name, surname, date_b_str, date_s_str, role;
             double KPI, salary;
             bool is_cur_working;
@@ -64,7 +64,7 @@ public:
 
             cont << line;
             cont >> id >> first_name >> middle_name >> surname >> date_b_str >> KPI >> role >>
-                    salary >> date_s_str >> is_cur_working;
+                salary >> date_s_str >> is_cur_working >> project_id;
 
             std::istringstream iss_b{date_b_str}, iss_s{date_s_str};
 
@@ -98,11 +98,15 @@ public:
                 tmp.add_personal_task(tmp_id);
             }
 
+            tmp.set_project_id(project_id);
+
             ret_vec.push_back(Employee(tmp));
         }
 
         return ret_vec;
     }
+
+
 };
 
 #endif // DB_MANAGER_H
