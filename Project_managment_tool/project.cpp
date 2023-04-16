@@ -2,10 +2,14 @@
 #include "project.h"
 
 
-Project::Project(std::string project_name, std::chrono::year_month_day date_start,
+Project::Project(int id, std::string project_name, std::chrono::year_month_day date_start,
                  std::chrono::year_month_day date_finish) :
-    project_name(project_name), date_start(date_start), date_finish(date_finish)
+    id(id), project_name(project_name), date_start(date_start), date_finish(date_finish)
 {}
+
+int Project::get_id() {
+    return this->id;
+}
 
 void Project::set_name(std::string new_name) {
     project_name = new_name;
@@ -31,14 +35,16 @@ void Project::set_date_finish(std::chrono::year_month_day new_date_finish) {
 
 void Project::add_task(int task) {
     tasks_vec.push_back(task);
+    task_count++;
 }
 
 void Project::remove_task(int num) {
     //auto tmp = std::move(tasks_vec[num]);
     tasks_vec.erase(tasks_vec.begin() + num);
+    task_count--;
 }
 
-void Project::complete_task(int num) {
+void Project::complete_task() {
     done_task_count++;
     //tasks_vec[num].complete();
 }
@@ -61,5 +67,9 @@ void Project::complete() {
 
 void Project::add_employee(int empl) {
     employee_vec.push_back(empl);
+}
+
+std::vector<int> Project::get_employees_id() {
+    return this->employee_vec;
 }
 

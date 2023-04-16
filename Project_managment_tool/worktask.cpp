@@ -1,9 +1,11 @@
 
 #include "worktask.h"
+#include <iostream>
 
-WorkTask::WorkTask(std::string name, std::chrono::year_month_day date_start,
-                   std::chrono::year_month_day date_finish, int project_id):Task(name, date_start, date_finish) {
-    this->project_id = project_id;
+WorkTask::WorkTask(int id, std::string name, std::chrono::year_month_day date_start,
+                   std::chrono::year_month_day date_finish, int new_project_id):Task(id, name, date_start, date_finish),
+    project_id(new_project_id)
+{
 }
 
 void WorkTask::add_employee(int new_employee_id) {

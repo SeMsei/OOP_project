@@ -13,8 +13,16 @@ bool Task::is_task_done() {
     return this->is_done;
 }
 
+void Task::complete() {
+    this->is_done = 1;
+}
+
 bool Task::is_task_overdue() {
     return this->is_overdue;
+}
+
+void Task::change_overdue_status(bool new_status) {
+    this->is_overdue = new_status;
 }
 
 std::chrono::year_month_day Task::get_date_start() {

@@ -18,8 +18,8 @@ protected:
 
 public:
     Task() = default;
-    Task(std::string name, std::chrono::year_month_day date_start, std::chrono::year_month_day date_finish)
-        :name(name), date_start(date_start), date_finish(date_finish)
+    Task(int id, std::string name, std::chrono::year_month_day date_start, std::chrono::year_month_day date_finish)
+        :id(id), name(name), date_start(date_start), date_finish(date_finish)
     {
     }
     Task(Task &other) = default;
@@ -30,6 +30,7 @@ public:
     void complete();
     bool is_task_done();
     bool is_task_overdue();
+    void change_overdue_status(bool new_status);
     std::chrono::year_month_day get_date_start();
     void set_date_start(std::chrono::year_month_day date_start);
     std::chrono::year_month_day get_date_finish();
