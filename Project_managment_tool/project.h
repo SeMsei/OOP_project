@@ -49,6 +49,7 @@ public:
     void complete();
     void add_employee(int empl);
     std::vector<int> get_employees_id();
+    void remove_employee(int id);
 
     Project& operator=(Project &other) = default;
     Project& operator=(Project &&other) = default;

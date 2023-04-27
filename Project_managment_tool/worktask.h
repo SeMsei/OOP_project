@@ -25,6 +25,7 @@ public:
     std::vector<int> get_employees_id();
     void change_project(int new_project_id);
     int get_project();
+    void remove_employee(int id);
 
     WorkTask& operator=(WorkTask &other) = default;
     WorkTask& operator=(WorkTask &&other) = default;

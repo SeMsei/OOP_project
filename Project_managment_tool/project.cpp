@@ -38,9 +38,11 @@ void Project::add_task(int task) {
     task_count++;
 }
 
-void Project::remove_task(int num) {
+void Project::remove_task(int id) {
     //auto tmp = std::move(tasks_vec[num]);
-    tasks_vec.erase(tasks_vec.begin() + num);
+    auto it =std::find_if(tasks_vec.begin(), tasks_vec.end(),
+                        [id](int tmp_id){return tmp_id == id;});
+    tasks_vec.erase(it);
     task_count--;
 }
 
@@ -71,5 +73,10 @@ void Project::add_employee(int empl) {
 
 std::vector<int> Project::get_employees_id() {
     return this->employee_vec;
+}
+
+void Project::remove_employee(int id) {
+    this->employee_vec.erase(std::find_if(this->employee_vec.begin(), this->employee_vec.end(),
+                                          [id](int empl_id){return id == empl_id;}));
 }
 

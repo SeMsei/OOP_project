@@ -22,3 +22,8 @@ void WorkTask::change_project(int new_project_id) {
 int WorkTask::get_project() {
     return project_id;
 }
+
+void WorkTask::remove_employee(int id) {
+    this->employees_id.erase(std::find_if(this->employees_id.begin(), this->employees_id.end(),
+                                          [id](int empl_id){return id == empl_id;}));
+}

@@ -7,6 +7,8 @@
 #include <vector>
 #include <chrono>
 #include "role.h"
+#include <openssl/sha.h>
+#include <openssl/evp.h>
 
 class Employee
 {
@@ -18,13 +20,16 @@ private:
     std::string middle_name;
     std::string surname;
     std::chrono::year_month_day date_birth;
-    double KPI;
+    double KPI = 0;
     Role role;
     double salary;
     std::chrono::year_month_day date_start;
-    bool is_cur_working;
+    bool is_cur_working = 1;
     std::vector<int> work_task_vec;
     std::vector<int> personal_task_vec;
+
+    std::string login;
+    std::string password;
 
 public:
     Employee();
@@ -34,6 +39,9 @@ public:
              std::chrono::year_month_day date_birth);
     Employee(int id, std::string first_name, std::string middle_name, std::string surname,
              std::chrono::year_month_day date_birth, std::chrono::year_month_day date_start);
+    Employee(int id, std::string first_name, std::string middle_name, std::string surname,
+             std::chrono::year_month_day date_birth, std::chrono::year_month_day date_start,
+             std::string login, std::string password);
     ~Employee() = default;
     void set_salary(double new_salary);
     double get_salary();
@@ -55,6 +63,12 @@ public:
     int get_id();
     void set_project_id(int new_project_id);
     int get_project_id();
+    std::string get_login();
+    void set_login(std::string);
+    std::string get_password();
+    void set_password(std::string);
+    void remove_task(int id);
+    void remove_personal_task(int id);
 
     Employee& operator=(Employee &other) = default;
     Employee& operator=(Employee &&other) = default;
