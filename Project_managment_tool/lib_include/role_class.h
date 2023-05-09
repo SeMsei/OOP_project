@@ -16,23 +16,23 @@
 class role_class
 {
 private:
-    static void update(std::vector<Employee> empl_vec, std::vector<WorkTask> &wtask_vec,
+    static void update(std::vector<Employee> &empl_vec, std::vector<WorkTask> &wtask_vec,
                        std::vector<PersonalTask> &ptask_vec, std::vector<Project> &proj_vec);
 
 public:
-    static void boss(Employee &cur_user, std::vector<Employee> empl_vec,
+    static void boss(Employee &cur_user, std::vector<Employee> &empl_vec,
                      std::vector<WorkTask> &wtask_vec, std::vector<PersonalTask> &ptask_vec,
                      std::vector<Project> &proj_vec);
 
-    static void slave(Employee &cur_user, std::vector<Employee> empl_vec,
+    static void slave(Employee &cur_user, std::vector<Employee> &empl_vec,
                  std::vector<WorkTask> &wtask_vec, std::vector<PersonalTask> &ptask_vec,
                  std::vector<Project> &proj_vec);
 
-    static void manager(Employee &cur_user, std::vector<Employee> empl_vec,
+    static void manager(Employee &cur_user, std::vector<Employee> &empl_vec,
                       std::vector<WorkTask> &wtask_vec, std::vector<PersonalTask> &ptask_vec,
                       std::vector<Project> &proj_vec);
 
-    static void hr_mngr(Employee &cur_user, std::vector<Employee> empl_vec,
+    static void hr_mngr(Employee &cur_user, std::vector<Employee> &empl_vec,
                       std::vector<WorkTask> &wtask_vec, std::vector<PersonalTask> &ptask_vec,
                       std::vector<Project> &proj_vec);
 };

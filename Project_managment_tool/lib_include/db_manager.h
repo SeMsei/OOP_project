@@ -30,7 +30,7 @@ class Project;
 class db_manager
 {
 private:
-    //static std::string connection_str;
+         //static std::string connection_str;
 
 
 public:
@@ -38,7 +38,7 @@ public:
         struct stat sb;
 
         if (!stat(cnct_str.c_str(), &sb))
-            //connection_str = cnct_str;
+        //connection_str = cnct_str;
         {}
         else
             return false;
@@ -118,7 +118,7 @@ public:
             tmp.set_login(login);
             tmp.set_password(password);
 
-            ret_vec.push_back(Employee(tmp));
+            ret_vec.push_back(tmp);
         }
 
         in.close();
@@ -164,7 +164,7 @@ public:
                 tmp.add_employee(tmp_id);
             }
 
-            ret_vec.push_back(WorkTask(tmp));
+            ret_vec.push_back(tmp);
 
         }
 
@@ -207,7 +207,7 @@ public:
 
             tmp.set_description(line);
 
-            ret_vec.push_back(PersonalTask(tmp));
+            ret_vec.push_back(tmp);
 
         }
 
@@ -263,7 +263,7 @@ public:
 
 
 
-            ret_vec.push_back(Project(tmp));
+            ret_vec.push_back(tmp);
 
         }
 
@@ -295,10 +295,10 @@ public:
             std::string personal_tasks_line;
             std::string log_pass_line = empl.get_login() + ' ' + empl.get_password();
             std::string info_line = std::to_string(empl.get_id()) + ' ' + empl.get_first_name() + ' ' +
-                    empl.get_middle_name() + ' ' + empl.get_surname() + ' ' + oss_b.str() + ' ' +
-                    std::to_string(empl.get_kpi()) + ' ' + reverse_role_map[empl.get_role()] + ' ' +
-                    std::to_string(empl.get_salary()) + ' ' + oss_s.str() + ' ' +
-                    std::to_string(empl.get_working_status()) + ' ' + std::to_string(empl.get_project_id());
+                                    empl.get_middle_name() + ' ' + empl.get_surname() + ' ' + oss_b.str() + ' ' +
+                                    std::to_string(empl.get_kpi()) + ' ' + reverse_role_map[empl.get_role()] + ' ' +
+                                    std::to_string(empl.get_salary()) + ' ' + oss_s.str() + ' ' +
+                                    std::to_string(empl.get_working_status()) + ' ' + std::to_string(empl.get_project_id());
 
             for (auto x:empl.get_work_tasks())
                 work_tasks_line += std::to_string(x) + ' ';

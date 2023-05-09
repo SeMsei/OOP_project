@@ -32,8 +32,8 @@ private:
     std::string password;
 
 public:
-    Employee();
-    Employee(Employee &other) = default;
+    Employee() = default;
+    Employee(const Employee &other) = default;
     Employee(Employee &&other) = default;
     Employee(int id, std::string first_name, std::string middle_name, std::string surname,
              std::chrono::year_month_day date_birth);

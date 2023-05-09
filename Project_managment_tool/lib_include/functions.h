@@ -46,10 +46,10 @@ void change_finish_date_work_task(std::vector<WorkTask> &wtask_vec); //validate 
 
 void complete_personal_task(Employee &usr, std::vector<PersonalTask> &ptask_vec);
 
-void complete_work_task(std::vector<WorkTask> &wtask_vec,
+void complete_work_task(Employee &cur_user, std::vector<Employee> &empl_vec, std::vector<WorkTask> &wtask_vec,
                         std::vector<Project> &proj_vec);
 
-void complete_work_task(Employee &cur_user, std::vector<WorkTask> &wtask_vec,
+void complete_work_task(std::vector<Employee> &empl_vec, std::vector<WorkTask> &wtask_vec,
                         std::vector<Project> &proj_vec);
 
 void change_slave_project(int employee_id, int project_id, std::vector<Employee> &empl_vec,

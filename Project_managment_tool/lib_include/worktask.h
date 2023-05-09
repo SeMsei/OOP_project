@@ -18,7 +18,7 @@ private:
 public:
     WorkTask() = default;
     WorkTask(int id, std::string name, std::chrono::year_month_day date_start, std::chrono::year_month_day date_finish, int project_id);
-    WorkTask(WorkTask &other) = default;
+    WorkTask(const WorkTask &other) = default;
     WorkTask(WorkTask &&other) = default;
 
     void add_employee(int new_employee_id);

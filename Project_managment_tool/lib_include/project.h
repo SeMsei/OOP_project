@@ -29,7 +29,7 @@ private:
 
 public:
     Project() = default;
-    Project(Project &other) = default;
+    Project(const Project &other) = default;
     Project(Project &&other) = default;
     Project(int id, std::string project_name, std::chrono::year_month_day date_start, std::chrono::year_month_day date_finish);
 

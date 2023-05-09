@@ -22,7 +22,7 @@ public:
         :id(id), name(name), date_start(date_start), date_finish(date_finish)
     {
     }
-    Task(Task &other) = default;
+    Task(const Task &other) = default;
     Task(Task &&other) = default;
 
     std::string get_name();
