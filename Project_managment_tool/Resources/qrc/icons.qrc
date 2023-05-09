@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icons/checked.png</file>
+        <file>icons/eye.png</file>
+        <file>icons/hide.png</file>
+        <file>icons/output-onlinepngtools (2).png</file>
+        <file>icons/output-onlinepngtools (4).png</file>
+    </qresource>
+</RCC>
